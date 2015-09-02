@@ -1,6 +1,10 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -12,7 +16,7 @@ import javax.swing.JPanel;
 public class TestPaintComponent extends JFrame {
 	public TestPaintComponent() {
 		NewPanel panel = new NewPanel();
-		panel.setBackground(Color.MAGENTA);
+		panel.setBackground(Color.WHITE);
 		add(panel);
 	}
 
@@ -30,14 +34,23 @@ class NewPanel extends JPanel {
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.setColor(Color.RED);
-		g.fillOval(140, 43, 92, 21);
-		g.setColor(Color.GREEN);
-		g.fillRect(392, 400, 10, 40);
-		g.setColor(Color.CYAN);
-		g.fillRoundRect(14, 370, 200, 40, 20, 20);	
+		for (int i = 0; i < 255; i+=5) {
+			g.setColor(new Color(i, 100, 100));
+			g.drawOval(22+i, 50, 200, 200);
+		}
+		g.setColor(Color.LIGHT_GRAY);
+		int[] xPoints = {21, 473, 473, 21};
+		int[] yPoints = {50, 50, 250, 250};
+		g.drawPolygon(xPoints, yPoints, 4);
+		Image img = null;
+		try {
+		    img = ImageIO.read(new File("dota2_io_sticker.png"));
+		} catch (IOException e) {
+			System.exit(0);
+		}
+		img = img.getScaledInstance(100, 100, 0);
+		g.drawImage(img, -10, 400, null);
 		g.setColor(Color.BLACK);
-		g.drawString("An attractive artistic display here", 5, 40);
-		g.drawString("I swear it's abstract art", 300, 400);
+		g.drawString("Colors with IO", 200, 400);
 	}
 }
