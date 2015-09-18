@@ -17,8 +17,8 @@ public class GraphicsPanel extends JPanel {
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Clock clock = new Clock();
-		int xCenter = 250;
-		int yCenter = 250;
+		int xCenter = getWidth()/2;
+		int yCenter = getHeight()/2;
 		int circleRadius = 200;
 		Image img = null;
 		try {
@@ -69,6 +69,6 @@ public class GraphicsPanel extends JPanel {
 		if (Integer.parseInt(minutes) < 10) minutes = "0"+minutes;
 		String seconds = clock.getSeconds()+"";
 		if (Integer.parseInt(seconds) < 10) seconds = "0"+seconds;
-		g.drawString(hours+":"+minutes+":"+seconds, 230, 480);
+		g.drawString(hours+":"+minutes+":"+seconds, xCenter - 20, (int) (yCenter + 1.2*circleRadius));
 	}
 }
