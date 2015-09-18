@@ -18,7 +18,7 @@ public class AdvancedTriangle extends JFrame {
 
 	public static void main(String[] args) {
 		AdvancedTriangle frame = new AdvancedTriangle();//create a frame
-		frame.setTitle("TestPaintComponent");//set the title of the frame
+		frame.setTitle("Pursuit Curves");//set the title of the frame
 		frame.setSize(500, 500);//set the size of the frame
 		frame.setLocationRelativeTo(null); // Center the frame
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//makes sure the frame closes properly
