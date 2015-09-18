@@ -20,6 +20,14 @@ public class GraphicsPanel extends JPanel {
 		int xCenter = 250;
 		int yCenter = 250;
 		int circleRadius = 200;
+		Image img = null;
+		try {
+		    img = ImageIO.read(new File("dota2_io_sticker.png"));
+		} catch (IOException e) {
+			System.exit(0);
+		}
+		img = img.getScaledInstance(2*circleRadius, 2*circleRadius, 0);
+		g.drawImage(img, xCenter - circleRadius, yCenter - circleRadius, null);
 		g.drawOval(xCenter - circleRadius, yCenter - circleRadius, 2*circleRadius, 2*circleRadius);
 		int i = 3;
 		for (int angleDegrees = 0; angleDegrees < 360; angleDegrees += 30) {
