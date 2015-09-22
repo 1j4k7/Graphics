@@ -7,6 +7,11 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+/**
+ * @author Jason Kuo
+ * 9/22/15
+ * This class draws a pursuit curve.
+ */
 public class AdvancedTriangle extends JFrame {
 	public AdvancedTriangle() {
 		NewPanel panel = new NewPanel();
