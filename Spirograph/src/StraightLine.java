@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -18,11 +17,10 @@ import javax.swing.JPanel;
  */
 public class StraightLine extends JFrame {
 	public StraightLine() {
-		setLayout(new BorderLayout());
 		PlotFunctions panel = new PlotFunctions();
 		panel.setSize(900, 900);
 		panel.setBackground(Color.BLACK);
-		add(panel, BorderLayout.CENTER);
+		add(panel);
 	}
 
 	public static void main(String[] args) {
@@ -37,9 +35,9 @@ public class StraightLine extends JFrame {
 
 class PlotFunctions extends JPanel {
 	
-	private double R = 50;
-	private double r = 92;
-	private double a = 100;
+	public double R = 50;
+	public double r = 92;
+	public double a = 100;
 	
 	double sin(double x) {
 		return Math.sin(x);
@@ -63,6 +61,7 @@ class PlotFunctions extends JPanel {
 		
 		Graphics2D g2 = (Graphics2D)g;
 	    g2.translate(getWidth()/2, getHeight()/2);
+	    
 	    Image img = null;
 		try {
 			img = ImageIO.read(new File("dota2_io_sticker.png"));
@@ -71,11 +70,11 @@ class PlotFunctions extends JPanel {
 		}
 		img = img.getScaledInstance(100, 100, 0);
 		g.drawImage(img, -50, -50, null);
+		
 	    g2.rotate(Math.toRadians(180));
 
 		Polygon p = new Polygon();
 		
-		g.setColor(Color.BLUE);
 		p.reset();
 		for (double t = -1000 * Math.PI; t <= 1000 * Math.PI; t+=.1) {
 			p.addPoint((int) spiroX(t), (int) spiroY(t));
