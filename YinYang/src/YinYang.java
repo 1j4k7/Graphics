@@ -34,12 +34,16 @@ public class YinYang extends JFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null); // Center the frame
 		frame.setVisible(true);
+		while (true) {
+			frame.repaint();
+		}
 	}
 }
 
 class GeometryPanel extends JPanel {
 	
 	double angle = 0;
+	int side = 800;
 	
 	@Override
 	protected void paintComponent(Graphics g) {
@@ -48,37 +52,28 @@ class GeometryPanel extends JPanel {
 		Graphics2D g2 = (Graphics2D)g;
 		g2.translate(getWidth()/2, getHeight()/2);
 		g2.rotate(angle);
-		angle += .01;
+		angle += .05;
+		side = (int) (Math.abs(800*Math.sin(angle)) + 32);
 
-		Shape s1 = new Ellipse2D.Double(-getWidth()/2, -getHeight()/2, getWidth(), getHeight());
-		Shape r1 = new Rectangle2D.Double(-getWidth()/2, -getHeight()/2, getWidth()/2, getHeight());
-		Shape s2 = new Ellipse2D.Double(-getWidth()/4, -getHeight()/2, getWidth()/2, getHeight()/2);
-		Shape s3 = new Ellipse2D.Double(-getWidth()/4, 0, getWidth()/2, getHeight()/2);
-		
-		Shape s4 = new Ellipse2D.Double(-getWidth()/16, getWidth()/4 - getWidth()/32, getWidth()/16, getHeight()/16);
-		Shape s5 = new Ellipse2D.Double(-getWidth()/16, getWidth()*3/4 - getWidth()/32, getWidth()/16, getHeight()/16);
+		Shape s1 = new Ellipse2D.Double(-side/2, -side/2, side, side);
+		Shape r1 = new Rectangle2D.Double(-side/2, -side/2, side/2, side);
+		Shape s2 = new Ellipse2D.Double(-side/4, -side/2, side/2, side/2);
+		Shape s3 = new Ellipse2D.Double(-side/4, 0, side/2, side/2);
 		
 		Area a1 = new Area(s1);
 		Area a2 = new Area(s2);
 		Area ar1 = new Area(r1);
 		Area a3 = new Area(s3);
 		
-		Area a4 = new Area(s4);
-		Area a5 = new Area(s5);
-		
 		ar1.intersect(a1);
 		ar1.subtract(a3);
-		ar1.subtract(a4);
-		//a2.subtract(a4);
 		
-		g2.setColor(Color.RED);
+		g2.setColor(new Color(200,200, 200));
 		g2.fill(a1);
 		g2.fill(a3);
-		//g2.fill(a4);
-		g2.setColor(Color.WHITE);
+		g2.setColor(new Color(100, 0, 0));
 		g2.fill(a2);
 		g2.fill(ar1);
-		//g2.fill(a5);
 		
 		Image img = null;
 		try {
@@ -86,10 +81,11 @@ class GeometryPanel extends JPanel {
 		} catch (IOException e) {
 			System.exit(0);
 		}
-		img = img.getScaledInstance(getWidth()/16 + 32, getHeight()/16 + 32, 0);
+		img = img.getScaledInstance(side/10, side/10, 0);
 		g2.rotate(-angle);
-		g2.drawImage(img, (int) (getHeight()/4*Math.cos(angle)), (int) (getHeight()/4*Math.sin(angle)), null);
-		g2.drawImage(img, (int) (getHeight()/4*Math.cos(angle)), (int) (getHeight()/4*Math.sin(angle)), null);
-		repaint();
+		double rotatedAngle = angle+Math.toRadians(90);
+		g2.drawImage(img, (int) (side/4*Math.cos(rotatedAngle) - side/20), (int) (side/4*Math.sin(rotatedAngle) - side/20), null);
+		g2.drawImage(img, (int) (-side/4*Math.cos(rotatedAngle) - side/20), (int) (-side/4*Math.sin(rotatedAngle) - side/20), null);
+		//repaint();
 	}
 }
