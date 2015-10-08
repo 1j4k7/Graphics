@@ -22,6 +22,11 @@ import javax.swing.JPanel;
  * that starts at zero. When the line crosses the path in a certain direction, the winding
  * number is incremented. It is decremented when the line crosses in the opposite direction.
  * If the winding number is not equal to zero, it is in the region. 
+<<<<<<< HEAD
+=======
+ * It also draws two six sided stars, one using the even-odd rule and one using the
+ * non-zero rule.
+>>>>>>> e75805b671a471b4d5257b47613c3907777d0923
  */
 public class WindingPath extends JFrame {
 	public WindingPath() {
@@ -99,6 +104,19 @@ class NewPanel extends JPanel {
 		hair.quadTo(50.0f, 60.0f, 25.0f, 45.0f);
 		hair.quadTo(100.0f, 30.0f, 148.0f, 105.0f);
 		
+<<<<<<< HEAD
+=======
+		GeneralPath path = new GeneralPath();
+		path.moveTo(50.0f, 50.0f);
+		path.lineTo(100.0f, 50.0f);
+		path.lineTo(75.0f, 80.0f);
+		path.closePath();
+		path.moveTo(75.0f, 40.0f);
+		path.lineTo(100.0f, 70.0f);
+		path.lineTo(50.0f, 70.0f);
+		path.closePath();
+		
+>>>>>>> e75805b671a471b4d5257b47613c3907777d0923
 		hair.setWindingRule(GeneralPath.WIND_EVEN_ODD);
 		G2D.setColor(new Color(230, 230, 255));
 		G2D.draw(hair);
@@ -140,7 +158,13 @@ class NewPanel extends JPanel {
 		G2D.fill(rightArmor);
 		
 		G2D.setColor(Color.WHITE);
+<<<<<<< HEAD
 		G2D.drawString("Even-Odd", 75, 190);
+=======
+		G2D.drawString("Even-Odd", 75, 250);
+		
+		
+>>>>>>> e75805b671a471b4d5257b47613c3907777d0923
 		
 		Image img = null;
 		try {
@@ -195,7 +219,26 @@ class NewPanel extends JPanel {
 		G2D.fill(rightArmor);
 		
 		G2D.setColor(Color.WHITE);
+<<<<<<< HEAD
 		G2D.drawString("Non-Zero", 75, 190);
+=======
+		G2D.drawString("Non-Zero", 75, 250);
+		
+		G2D.translate(-300, 300);
+		
+		path.setWindingRule(GeneralPath.WIND_EVEN_ODD);
+		G2D.setColor(Color.RED);
+		G2D.draw(path);
+		G2D.setColor(Color.CYAN);
+		G2D.fill(path);
+		G2D.translate(300, 0);
+		path.setWindingRule(GeneralPath.WIND_NON_ZERO);
+		G2D.setColor(Color.RED);
+		G2D.draw(path);
+		G2D.setColor(Color.CYAN);
+		G2D.fill(path);
+		
+>>>>>>> e75805b671a471b4d5257b47613c3907777d0923
 
 	}
 }
