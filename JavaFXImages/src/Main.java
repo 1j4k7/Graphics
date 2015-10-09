@@ -32,7 +32,7 @@ public class Main extends Application {
 		gridPane.add(image4, 1, 1);
 		Scene scene = new Scene(gridPane, 800, 800);
 		stage.setScene(scene);
-		stage.setTitle("IO.jpg.png.html.wav");
+		stage.setTitle("IO.jpg.html.wav.png");
 		stage.show();
 	}
 
