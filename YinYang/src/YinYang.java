@@ -5,7 +5,6 @@ import java.awt.Image;
 import java.awt.Shape;
 import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.Ellipse2D.Double;
 import java.awt.geom.Rectangle2D;
 import java.io.File;
 import java.io.IOException;
