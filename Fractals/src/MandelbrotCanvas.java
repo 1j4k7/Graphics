@@ -1,5 +1,10 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 /**
@@ -24,6 +29,14 @@ class MandelbrotCanvas extends JPanel {
 					g.setColor(new Color(c * 196 % 255, c * 92 % 255, c * 24 % 255)); 
 				g.drawRect((int) (x * 100) + 200, (int) (y * 100) + 200, 1, 1); // Fill a tiny rectangle with a specified color.  
 			}
+		Image img = null;
+		try {
+		    img = ImageIO.read(new File("dota2_io_sticker.png"));
+		} catch (IOException e) {
+			System.exit(0);
+		}
+		img = img.getScaledInstance(100, 100, 0);
+		g.drawImage(img, 130, 150, null);
 	} 
 
 	/** Returns the iteration count */
