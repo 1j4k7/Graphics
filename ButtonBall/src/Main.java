@@ -17,8 +17,8 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) {
 		ImageView image = new ImageView(new Image("dota2_io_sticker.png"));
-		image.setFitHeight(50);
-		image.setFitWidth(50);
+		image.setFitHeight(100);
+		image.setFitWidth(100);
 		image.setX(250);
 		image.setY(250);
 		Button left = new Button("Left");
