@@ -51,7 +51,7 @@ public class Main extends Application {
 
 		public void handle(ActionEvent event) {
 			System.out.println("Left");
-			image.setX(image.getX() - 50);
+			image.setX(image.getX() - movement);
 		}
 		
 	}
@@ -60,7 +60,7 @@ public class Main extends Application {
 
 		public void handle(ActionEvent event) {
 			System.out.println("Right");
-			image.setX(image.getX() + 50);
+			image.setX(image.getX() + movement);
 		}
 		
 	}
@@ -69,7 +69,7 @@ public class Main extends Application {
 
 		public void handle(ActionEvent event) {
 			System.out.println("Up");
-			image.setY(image.getY() - 50);
+			image.setY(image.getY() - movement);
 		}
 		
 	}
@@ -78,7 +78,7 @@ public class Main extends Application {
 
 		public void handle(ActionEvent event) {
 			System.out.println("Down");
-			image.setY(image.getY() + 50);
+			image.setY(image.getY() + movement);
 		}
 		
 	}
