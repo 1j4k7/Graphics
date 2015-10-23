@@ -20,6 +20,7 @@ tmp/
 local.properties
 .settings/
 .loadpath
+*.recommenders
 
 # Eclipse Core
 .project
@@ -45,4 +46,5 @@ local.properties
 # TeXlipse plugin
 .texlipse
 
-Thumbs.db
+**/Thumbs.db
+**/.gitignore
