@@ -9,6 +9,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
+/**
+ * @author Jason Kuo
+ * 10/23/15
+ */
 public class Main extends Application {
 
 	public static void main(String[] args) {
