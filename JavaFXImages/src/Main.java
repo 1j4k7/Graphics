@@ -19,10 +19,10 @@ public class Main extends Application {
 		ImageView image2 = new ImageView(new Image("io2.jpg"));
 		image2.setFitHeight(400);
 		image2.setFitWidth(400);
-		ImageView image3 = new ImageView(new Image("io3.png"));
+		ImageView image3 = new ImageView(new Image("io3.jpg"));
 		image3.setFitHeight(400);
 		image3.setFitWidth(400);
-		ImageView image4 = new ImageView(new Image("io4.png"));
+		ImageView image4 = new ImageView(new Image("io4.jpg"));
 		image4.setFitHeight(400);
 		image4.setFitWidth(400);
 		GridPane gridPane = new GridPane();

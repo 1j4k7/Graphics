@@ -43,7 +43,7 @@ public class Main extends Application {
 		pane.getChildren().add(image);
 		pane.setBottom(buttonRow);
 		stage.setScene(new Scene(pane, 500, 500));
-		stage.setTitle("Tether");
+		stage.setTitle("Movement");
 		stage.show();
 	}
 	
