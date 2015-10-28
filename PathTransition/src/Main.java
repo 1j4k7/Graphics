@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -73,7 +74,7 @@ public class Main extends Application {
 		pane.setOnMousePressed(e -> {path1.pause();path2.pause();path3.pause();});
 		pane.setOnMouseReleased(e -> {path1.play();path2.play();path3.play();});
 		pane.getChildren().addAll(quas, wex, exort, sun);
-		stage.setScene(new Scene(pane, 500, 500));
+		stage.setScene(new Scene(pane, 500, 500, Color.BLACK));
 		stage.setTitle("Wispcentric Systems");
 		stage.show();
 	}
