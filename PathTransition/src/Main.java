@@ -44,7 +44,7 @@ public class Main extends Application {
 		PathTransition path1 = new PathTransition();
 		path1.setPath(orbit1);
 		path1.setNode(quas);
-		path1.setDuration(Duration.seconds(5));
+		path1.setDuration(Duration.seconds(4));
 		path1.setCycleCount(Timeline.INDEFINITE);
 		path1.setDelay(Duration.millis(0));
 		Circle orbit2 = new Circle();
@@ -63,7 +63,7 @@ public class Main extends Application {
 		PathTransition path3 = new PathTransition();
 		path3.setPath(orbit3);
 		path3.setNode(exort);
-		path3.setDuration(Duration.seconds(19));
+		path3.setDuration(Duration.seconds(17));
 		path3.setCycleCount(Timeline.INDEFINITE);
 		
 		path1.play();
